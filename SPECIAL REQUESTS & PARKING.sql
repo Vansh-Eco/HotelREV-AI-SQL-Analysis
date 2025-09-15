@@ -1,0 +1,22 @@
+					  -- SPECIAL REQUESTS & PARKING
+                      
+-- HOW MANY CUSTOMER MAKE SPECIAL REQUESTS?
+
+SELECT 
+	`Total Of Special Requests`,
+    count(*) AS TOTAL_CUSTOMERS
+FROM hotel_bookings
+GROUP BY `Total Of Special Requests`
+ORDER BY `Total Of Special Requests` DESC;
+
+-- DOES THE NUMBER OF SPECIAL REQUESTS AFFECT CANCELATION PROBABILITY ?
+
+SELECT 
+	`Total Of Special Requests`,
+    COUNT(*) AS TOTAL_BOOKINGS,
+    SUM(CASE WHEN CANCELLED = "YES" THEN 1 ELSE 0 END) AS CANCELLED_BOOKINGS,
+    ROUND(SUM(CASE WHEN CANCELLED = "YES" THEN 1 ELSE 0 END) * 100 / COUNT(*), 2) 
+    AS CANCELLATION_RATE
+FROM HOTEL_BOOKINGS
+GROUP BY `Total Of Special Requests`
+order by `Total Of Special Requests`;
