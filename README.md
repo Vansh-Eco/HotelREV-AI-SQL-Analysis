@@ -15,5 +15,3 @@ Queries explore **cancellations, customer segmentation, revenue trends, room all
 ## Tools Used
 - **SQL** (GROUP BY, HAVING, CASE, aggregate functions)  
 - **MySQL Workbench**
-
-📄 Full analysis with SQL queries & outputs: [View PDF](Hotel_Booking_SQL_Analysis.pdf)
